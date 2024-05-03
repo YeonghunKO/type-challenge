@@ -4,6 +4,10 @@ const obj = {
   c: "3",
 };
 type MyPick<T, K extends keyof T> = {
+  [Key in keyof T as Key extends K ? Key : never]: T[Key];
+};
+
+type MyPick2<T, K extends keyof T> = {
   [key in K]: T[key];
 };
 
