@@ -46,3 +46,4 @@ const cool: result = {
   //   "model Y": "model Y",
   tesla: "tesla",
 };
+(() => {})();

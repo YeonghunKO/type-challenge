@@ -7,3 +7,4 @@ type First2<T extends any[]> = T["length"] extends 0 ? never : T[0];
 
 //answer3
 type First3<T extends any[]> = T extends [infer A, ...infer rest] ? A : never;
+(() => {})();

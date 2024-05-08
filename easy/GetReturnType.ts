@@ -11,3 +11,4 @@ function solution(params: never[]): GetReturnType<typeof ha> {
 }
 
 solution([]);
+(() => {})();

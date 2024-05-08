@@ -15,3 +15,4 @@ const res: MyPick<typeof obj, "a" | "b"> = {
   a: 1,
   b: 33,
 };
+(() => {})();
