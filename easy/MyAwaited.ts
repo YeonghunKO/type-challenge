@@ -13,4 +13,3 @@
 
   type Res = MyAwaited<T>;
 })();
-(() => {})();

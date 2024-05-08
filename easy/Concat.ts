@@ -1,6 +1,6 @@
-type Concat<T extends readonly unknown[], U extends readonly unknown[]> = [
-  ...T,
-  ...U
-];
-
-(() => {})();
+(() => {
+  type Concat<T extends readonly unknown[], U extends readonly unknown[]> = [
+    ...T,
+    ...U
+  ];
+})();
