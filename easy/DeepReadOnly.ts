@@ -1,21 +1,30 @@
 (() => {
   type X = {
-    x: {
-      a: 1;
-      b: "hi";
+    a: () => 22;
+    b: string;
+    c: {
+      d: boolean;
+      e: {
+        g: {
+          h: {
+            i: true;
+            j: "string";
+          };
+          k: "hello";
+        };
+        l: [
+          "hi",
+          {
+            m: ["hey"];
+          }
+        ];
+      };
     };
-    y: "hey";
   };
 
-  type Expected = {
-    readonly x: {
-      readonly a: 1;
-      readonly b: "hi";
-    };
-    readonly y: "hey";
-  };
-
-  type DeepReadonly<X> = any;
+  type DeepReadonly<X> = keyof X extends never
+    ? X
+    : { readonly [Key in keyof X]: DeepReadonly<X[Key]> };
 
   type Todo = DeepReadonly<X>; // should be same as `Expected`
 })();
