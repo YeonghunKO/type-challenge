@@ -6,4 +6,10 @@ type Chainable<R = {}> = {
   get(): R;
 };
 
+declare function PromiseAll<T extends any[]>(
+  values: T
+): {
+  [Key in keyof T]: Awaited<T[Key]>;
+};
+
 declare const a: Chainable;
