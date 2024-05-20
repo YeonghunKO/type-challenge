@@ -10,11 +10,6 @@ Because T['type'] is not a naked type and thus doesn't get distributed. And "dog
     color?: string;
   };
 
-  type LookUp2<
-    T extends { type: string },
-    U extends string
-  > = T["type"] extends U ? T : never;
-
   type LookUp<
     Animal extends TypeTarget,
     Type extends Animal["type"]
@@ -31,5 +26,5 @@ Because T['type'] is not a naked type and thus doesn't get distributed. And "dog
     color: "brown" | "white" | "black";
   }
 
-  type MyDogType = LookUp2<Cat | Dog, "dog">; // expected to be `Dog`
+  type MyDogType = LookUp<Cat | Dog, "dog">; // expected to be `Dog`
 })();
