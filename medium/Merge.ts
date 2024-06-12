@@ -7,6 +7,8 @@
       : never;
   };
 
+  type Merge2<T extends object, U> = Omit<T, keyof U> & U;
+
   type foo = {
     name: string;
     age: string;
@@ -17,5 +19,5 @@
     sex: string;
   };
 
-  type Result = Merge<foo, coo>; // expected to be {name: string, age: number, sex: string}
+  type Result = Merge2<foo, coo>; // expected to be {name: string, age: number, sex: string}
 })();
