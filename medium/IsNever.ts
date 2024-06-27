@@ -6,5 +6,5 @@
   type C = IsNever<null>; // expected to be false
   type D = IsNever<[]>; // expected to be false
   type E = IsNever<number>; // expected to be false
-  console.log("ㅗㅁ모");
+  console.log("ㅁ모");
 };
